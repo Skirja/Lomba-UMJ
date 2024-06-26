@@ -11,8 +11,25 @@ document.addEventListener('DOMContentLoaded', () => {
 const form = document.querySelector('form');
 const submitButton = document.querySelector('.submit-button');
 
-submitButton.addEventListener('click', (event) => {
+function validateEmail(email) {
+  const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  return re.test(email);
+}
+
+function validatePassword(password) {
+  const re = /^(?=.*[0-9])(?=.*[a-zA-Z]).{8,}$/;
+  return re.test(password);
+}
+
+function validatePhoneNumber(phoneNumber) {
+  const re = /^\d+$/;
+  return re.test(phoneNumber);
+}
+
+form.addEventListener('submit', (event) => {
   event.preventDefault();
+
+  let isValid = true;
 
   const namaLengkap = document.getElementById('namaLengkap').value;
   const email = document.getElementById('email').value;
@@ -73,76 +90,36 @@ submitButton.addEventListener('click', (event) => {
     return;
   }
 
-  form.submit();
-});
-
-const emailInput = document.getElementById('email');
-const passwordInput = document.getElementById('password');
-const confirmPasswordInput = document.getElementById('confirmPassword');
-
-form.addEventListener('submit', (event) => {
-  event.preventDefault();
-
-  let isValid = true;
-
-  if (!validateEmail(emailInput.value)) {
-    displayError(emailInput, 'Please enter a valid email address.');
-    isValid = false;
-  } else {
-    clearError(emailInput);
-  }
-
-  if (!validatePassword(passwordInput.value)) {
-    displayError(passwordInput, 'Password must be at least 8 characters long and contain at least one number.');
-    isValid = false;
-  } else {
-    clearError(passwordInput);
-  }
-
-  if (passwordInput.value !== confirmPasswordInput.value) {
-    displayError(confirmPasswordInput, 'Passwords do not match.');
-    isValid = false;
-  } else {
-    clearError(confirmPasswordInput);
-  }
-
-  if (isValid) {
-    form.submit();
-  } else {
+  if (!validatePhoneNumber(nomorTelepon)) {
     Swal.fire({
       icon: 'error',
       title: 'Oops...',
-      text: 'Formulir tidak valid!',
+      text: 'Nomor telepon hanya boleh berisi angka!',
       customClass: {
         confirmButton: 'swal2-confirm-button-custom'
       },
     });
+    return;
+  }
+
+  if (isValid) {
+    Swal.fire({
+      title: 'Registrasi Berhasil!',
+      text: 'Anda berhasil mendaftar. Silahkan login.',
+      icon: 'success',
+      confirmButtonText: 'Login',
+      confirmButtonColor: '#DD9F00',
+      confirmButtonAriaLabel: 'Login',
+      customClass: {
+        confirmButton: 'swal2-confirm-button-custom'
+      },
+    }).then((result) => {
+      if (result.isConfirmed) {
+        window.location.href = 'login.html';
+      }
+    });
   }
 });
-
-function validateEmail(email) {
-  const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-  return re.test(email);
-}
-
-function validatePassword(password) {
-  const re = /^(?=.*[0-9])(?=.*[a-zA-Z]).{8,}$/;
-  return re.test(password);
-}
-
-function displayError(inputField, message) {
-  const errorSpan = document.createElement('span');
-  errorSpan.textContent = message;
-  errorSpan.style.color = 'red';
-  inputField.parentNode.insertBefore(errorSpan, inputField.nextSibling);
-}
-
-function clearError(inputField) {
-  const errorSpan = inputField.parentNode.querySelector('span');
-  if (errorSpan) {
-    errorSpan.remove();
-  }
-}
 
 $(document).ready(function () {
   function animateContainer(container, animationIn, animationOut) {
