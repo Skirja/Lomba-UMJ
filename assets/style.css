@@ -130,6 +130,7 @@ body {
 .container-3 h2 {
     font-size: 2.5rem;
     font-family: var(--font-arial);
+    margin-top: 0;
 }
 
 .card-container {
@@ -211,12 +212,11 @@ body {
     transform: translateY(1px);
 }
 
-.container-4,
-.container-5 {
+.container-isi-4,
+.container-isi-5 {
     display: flex;
     justify-content: center;
     padding-top: 6rem;
-    margin: 0 12.5rem;
     gap: 1.5rem;
     position: relative;
 }
@@ -335,6 +335,7 @@ body {
     font-style: normal;
     font-weight: 700;
     line-height: normal;
+    margin-top: 0;
 }
 
 .form-daftar form {
@@ -572,6 +573,8 @@ footer {
     }
 }
 
+@media (max-width: 1000px) {}
+
 @media (max-width: 905px) {
     .logo-1-besar {
         display: none;
@@ -611,8 +614,8 @@ footer {
         margin: 0 2rem;
     }
 
-    .container-4,
-    .container-5 {
+    .container-isi-4,
+    .container-isi-5 {
         align-items: center;
         flex-direction: column;
     }
@@ -691,25 +694,25 @@ footer {
         transition: background-color 0.3s ease, transform 0.2s ease;
         text-align: center;
     }
-    
+
     .nav-menu ul li:nth-child(6) a {
         color: #ffffff;
         text-decoration: none;
         font-weight: bold;
     }
-    
+
     .nav-menu ul li:nth-child(6):hover {
         background-color: #4a4a4a;
         transform: translateY(-2px);
         box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     }
-    
+
     .nav-menu ul li:nth-child(6):active {
         background-color: #333333;
         transform: translateY(1px);
         box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
     }
-    
+
 
     .footer-content {
         flex-direction: column;
@@ -777,6 +780,110 @@ footer {
     }
 }
 
+@media (max-width: 1000px) and (orientation: landscape) {
+    .hamburger-menu-container {
+        display: block;
+    }
+
+    .nav-bar {
+        display: none;
+    }
+
+    .nav-item ul {
+        flex-wrap: wrap;
+        justify-content: space-between;
+        gap: 40px;
+    }
+
+    .nav-item ul li {
+        flex: 1 1 auto;
+        text-align: center;
+    }
+
+    .hamburger-menu {
+        display: block;
+        position: fixed;
+        top: 1rem;
+        right: 1rem;
+        z-index: 1000;
+        background: none;
+        border: none;
+        font-size: 2rem;
+        color: #000;
+    }
+
+    .nav-menu {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 250px;
+        height: 100vh;
+        background-color: rgba(255, 184, 0, 0.9);
+        transition: 0.3s;
+        padding: 2rem;
+        z-index: 999;
+        transition: right 0.3s ease-in-out;
+    }
+
+    .nav-menu.active {
+        right: 0;
+    }
+
+    .nav-menu ul {
+        flex-direction: column;
+        align-items: flex-start;
+        list-style: none;
+        padding: 0;
+    }
+
+    .nav-menu ul li {
+        margin: 1rem 0;
+    }
+
+    .nav-menu ul li a {
+        text-decoration: none;
+        font-size: 1.2rem;
+        font-weight: bold;
+        color: var(--color-black);
+    }
+
+    .nav-menu ul li a:hover {
+        color: #F5F5F5;
+        transition: ease-in-out 0.2s;
+    }
+
+    .nav-menu ul li:nth-child(1) {
+        background-color: inherit;
+    }
+
+    .nav-menu ul li:nth-child(6) {
+        background-color: #000000;
+        border: none;
+        border-radius: 15px;
+        padding: 0.3rem 1rem;
+        transition: background-color 0.3s ease, transform 0.2s ease;
+        text-align: center;
+    }
+
+    .nav-menu ul li:nth-child(6) a {
+        color: #ffffff;
+        text-decoration: none;
+        font-weight: bold;
+    }
+
+    .nav-menu ul li:nth-child(6):hover {
+        background-color: #4a4a4a;
+        transform: translateY(-2px);
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
+
+    .nav-menu ul li:nth-child(6):active {
+        background-color: #333333;
+        transform: translateY(1px);
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+    }
+}
+
 @media (max-width: 768px) and (orientation: landscape) {
     .container-1 {
         height: auto;
@@ -794,5 +901,41 @@ footer {
 
     .logo-1-besar {
         display: none;
+    }
+
+    .nav-menu ul li {
+        margin: 1rem 0;
+    }
+}
+
+.fadeInUp {
+    animation: fadeInUp 1s ease-in-out;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.fadeOutDown {
+    animation: fadeOutDown 1s ease-in-out;/
+}
+
+@keyframes fadeOutDown {
+    from {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    to {
+        opacity: 0;
+        transform: translateY(20px);
     }
 }
