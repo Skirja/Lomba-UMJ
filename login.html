@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Login</title>
+
+        <link rel="stylesheet" href="./assets/styleLogin.css" />
+        <link rel="shortcut icon" href="./assets/img/logo 1.png" type="image/x-icon">
+        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    </head>
+</head>
+
+<body>
+    <main>
+        <section class="login">
+            <h1>Login</h1>
+            <h5>Selamat datang kembali!</h5>
+            <div class="login-form">
+                <form action="" method="post">
+                    <div class="input-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" placeholder="Masukkan Email" required>
+                    </div>
+                    <div class="input-group">
+                        <label for="password">Password</label>
+                        <input type="password" id="password" name="password" placeholder="Masukkan Password" required>
+                    </div>
+                    <div class="input-group">
+                        <div class="box-ingat">
+                            <input type="checkbox" id="remember-me" name="remember-me">
+                            <label for="remember-me">Ingat Saya!</label>
+                        </div>
+                        <div class="lupa-password">
+                            <b class="lupa-password"><a href="#">Lupa Password?</a></b>
+                        </div>
+                    </div>
+                    <button type="submit" value="Login" class="submit-button">Masuk</button>
+                    <button type="button" class="daftar-button"
+                        onclick="window.location.href='index.html#form-daftar'">Belum Punya Akun?</button>
+                </form>
+            </div>
+        </section>
+
+        <section class="gambar">
+            <img src="./assets/img/login-banner.png" alt="Login Beasiswa HMIF">
+        </section>
+    </main>
+</body>
+
+</html>
