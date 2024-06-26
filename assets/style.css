@@ -938,3 +938,8 @@ footer {
         transform: translateY(20px);
     }
 }
+
+.swal2-confirm-button-custom {
+    background-color: #ffb800 !important;
+    color: #000 !important;
+}

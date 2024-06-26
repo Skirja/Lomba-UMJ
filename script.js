@@ -30,6 +30,9 @@ submitButton.addEventListener('click', (event) => {
       icon: 'error',
       title: 'Oops...',
       text: 'Harap isi semua kolom formulir!',
+      customClass: {
+        confirmButton: 'swal2-confirm-button-custom'
+      },
     });
     return;
   }
@@ -39,6 +42,9 @@ submitButton.addEventListener('click', (event) => {
       icon: 'error',
       title: 'Oops...',
       text: 'Alamat email tidak valid!',
+      customClass: {
+        confirmButton: 'swal2-confirm-button-custom'
+      },
     });
     return;
   }
@@ -48,6 +54,9 @@ submitButton.addEventListener('click', (event) => {
       icon: 'error',
       title: 'Oops...',
       text: 'Password harus minimal 8 karakter dan mengandung setidaknya satu angka!',
+      customClass: {
+        confirmButton: 'swal2-confirm-button-custom'
+      },
     });
     return;
   }
@@ -57,6 +66,9 @@ submitButton.addEventListener('click', (event) => {
       icon: 'error',
       title: 'Oops...',
       text: 'Konfirmasi password tidak cocok!',
+      customClass: {
+        confirmButton: 'swal2-confirm-button-custom'
+      },
     });
     return;
   }
@@ -101,6 +113,9 @@ form.addEventListener('submit', (event) => {
       icon: 'error',
       title: 'Oops...',
       text: 'Formulir tidak valid!',
+      customClass: {
+        confirmButton: 'swal2-confirm-button-custom'
+      },
     });
   }
 });
