@@ -29,8 +29,6 @@ function validatePhoneNumber(phoneNumber) {
 form.addEventListener('submit', (event) => {
   event.preventDefault();
 
-  let isValid = true;
-
   const namaLengkap = document.getElementById('namaLengkap').value;
   const email = document.getElementById('email').value;
   const password = document.getElementById('password').value;
@@ -102,23 +100,21 @@ form.addEventListener('submit', (event) => {
     return;
   }
 
-  if (isValid) {
-    Swal.fire({
-      title: 'Registrasi Berhasil!',
-      text: 'Anda berhasil mendaftar. Silahkan login.',
-      icon: 'success',
-      confirmButtonText: 'Login',
-      confirmButtonColor: '#DD9F00',
-      confirmButtonAriaLabel: 'Login',
-      customClass: {
-        confirmButton: 'swal2-confirm-button-custom'
-      },
-    }).then((result) => {
-      if (result.isConfirmed) {
-        window.location.href = 'login.html';
-      }
-    });
-  }
+  Swal.fire({
+    title: 'Registrasi Berhasil!',
+    text: 'Anda berhasil mendaftar. Silahkan login.',
+    icon: 'success',
+    confirmButtonText: 'Login',
+    confirmButtonColor: '#DD9F00',
+    confirmButtonAriaLabel: 'Login',
+    customClass: {
+      confirmButton: 'swal2-confirm-button-custom'
+    },
+  }).then((result) => {
+    if (result.isConfirmed) {
+      window.location.href = 'login.html';
+    }
+  });
 });
 
 $(document).ready(function () {

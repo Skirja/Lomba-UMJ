@@ -1,0 +1,51 @@
+.sidebar {
+  min-height: 100vh;
+  background-color: #f8f9fa;
+}
+
+.content {
+  padding: 20px;
+}
+
+.nav-link {
+  color: #333;
+}
+
+.nav-link:hover {
+  background-color: #e9ecef;
+}
+
+.active {
+  background-color: #e9ecef;
+  font-weight: bold;
+}
+
+.profile-info {
+  background-color: #f8f9fa;
+  padding: 15px;
+  border-radius: 5px;
+}
+
+.profile-pic {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+.tab-content {
+  padding-top: 20px;
+  background-color: white;
+}
+
+.tab-pane {
+  background-color: white;
+  border: 1px solid #dee2e6;
+  border-top: none;
+  border-radius: 0 0 5px 5px;
+  padding: 20px;
+}
+
+.card {
+  margin-bottom: 20px;
+}

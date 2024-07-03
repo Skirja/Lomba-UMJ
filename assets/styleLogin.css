@@ -31,6 +31,7 @@ main {
     font-size: 2.25rem;
     font-weight: 700;
     margin-bottom: 0.5rem;
+    margin-top: 0;
 }
 
 .login h5 {

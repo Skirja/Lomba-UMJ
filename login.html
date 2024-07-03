@@ -24,11 +24,11 @@
                 <form action="" method="post">
                     <div class="input-group">
                         <label for="email">Email</label>
-                        <input type="email" id="email" name="email" placeholder="Masukkan Email" required>
+                        <input type="email" id="email" name="email" placeholder="Masukkan Email">
                     </div>
                     <div class="input-group">
                         <label for="password">Password</label>
-                        <input type="password" id="password" name="password" placeholder="Masukkan Password" required>
+                        <input type="password" id="password" name="password" placeholder="Masukkan Password">
                     </div>
                     <div class="input-group">
                         <div class="box-ingat">
@@ -49,6 +49,33 @@
         <section class="gambar">
             <img src="./assets/img/login-banner.png" alt="Login Beasiswa HMIF">
         </section>
+
+        <script>
+            const form = document.querySelector('form');
+            form.addEventListener('submit', function (event) {
+                event.preventDefault();
+
+                const email = document.getElementById('email').value;
+                const password = document.getElementById('password').value;
+
+                if (email === '' || password === '') {
+                    Swal.fire({
+                        icon: 'error',
+                        title: 'Oops...',
+                        text: 'Harap isi email dan password!'
+                    });
+                } else {
+                    Swal.fire({
+                        icon: 'success',
+                        title: 'Berhasil!',
+                        text: 'Anda berhasil login.'
+                    }).then(() => {
+                        window.location.href = 'dashboard.html';
+                    });
+                }
+            });
+        </script>
+
     </main>
 </body>
 
