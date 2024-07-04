@@ -1,7 +1,7 @@
 :root {
     --font-arial: Arial, sans-serif;
     --font-size-base: 1rem;
-    --color-black: #000;
+    --color-black: #36342E;
     --color-yellow: #FFB800;
     --color-yellow-light: #FFE49E;
     --color-yellow-dark: #DD9F00;
@@ -12,6 +12,7 @@ body {
     line-height: 1.6;
     font-family: var(--font-arial);
     overflow-x: hidden;
+    color: var(--color-black);
 }
 
 main {
@@ -198,4 +199,9 @@ main {
         flex-direction: column;
         gap: 0.5rem;
     }
+}
+
+.swal2-confirm-button-custom {
+    background-color:  var(--color-yellow) !important;
+    color: var(--color-black) !important;
 }
