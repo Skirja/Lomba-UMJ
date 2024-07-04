@@ -193,34 +193,39 @@
             <div class="card">
               <div class="card-body">
                 <h5 class="card-title">Status Berkas</h5>
-                <ul class="list-group">
-                  <li class="list-group-item d-flex justify-content-between align-items-center">
-                    <span class="fw-normal">Transkrip nilai terakhir yang telah dilegalisir</span>
-                    <span class="badge bg-warning text-dark rounded-pill">Menunggu Konfirmasi</span>
-                  </li>
-                  <li class="list-group-item d-flex justify-content-between align-items-center">
-                    <span class="fw-normal">Fotokopi Kartu Tanda Mahasiswa (KTM) dan Kartu Tanda Penduduk (KTP)</span>
-                    <span class="badge bg-success rounded-pill">Ok</span>
-                  </li>
-                  <li class="list-group-item d-flex justify-content-between align-items-center">
-                    <span class="fw-normal">Esai yang menjelaskan prestasi, kontribusi, dan aspirasi masa depan
-                      (maksimal 750 kata)</span>
-                    <span class="badge bg-warning text-dark rounded-pill">Menunggu Konfirmasi</span>
-                  </li>
-                  <li class="list-group-item d-flex justify-content-between align-items-center">
-                    <span class="fw-normal">Surat rekomendasi dari dosen wali atau pembimbing</span>
-                    <span class="badge bg-warning text-dark rounded-pill">Menunggu Konfirmasi</span>
-                  </li>
-                  <li class="list-group-item d-flex justify-content-between align-items-center">
-                    <span class="fw-normal">Sertifikat atau bukti pencapaian prestasi minimal di tingkat provinsi dalam
-                      2 tahun
-                      terakhir</span>
-                    <span class="badge bg-warning text-dark rounded-pill">Menunggu Konfirmasi</span>
-                  </li>
-                </ul>
+                <div class="input-group mb-3">
+                  <input type="text" class="form-control" placeholder="Cari..." id="searchInput">
+                  <div class="input-group-append">
+                    <button class="btn btn-outline-secondary" type="button" id="searchButton">Cari</button>
+                  </div>
+                </div>
+                <table class="table" id="berkasTable">
+                  <tbody>
+                    <tr>
+                      <td>Transkrip nilai terakhir yang telah dilegalisir</td>
+                      <td><span class="badge bg-warning text-dark rounded-pill">Menunggu Konfirmasi</span></td>
+                    </tr>
+                    <tr>
+                      <td>Fotokopi Kartu Tanda Mahasiswa (KTM) dan Kartu Tanda Penduduk (KTP)</td>
+                      <td><span class="badge bg-success rounded-pill">Ok</span></td>
+                    </tr>
+                    <tr>
+                      <td>Esai yang menjelaskan prestasi, kontribusi, dan aspirasi masa depan (maksimal 750 kata)</td>
+                      <td><span class="badge bg-warning text-dark rounded-pill">Menunggu Konfirmasi</span></td>
+                    </tr>
+                    <tr>
+                      <td>Surat rekomendasi dari dosen wali atau pembimbing</td>
+                      <td><span class="badge bg-warning text-dark rounded-pill">Menunggu Konfirmasi</span></td>
+                    </tr>
+                    <tr>
+                      <td>Sertifikat atau bukti pencapaian prestasi minimal di tingkat provinsi dalam 2 tahun terakhir
+                      </td>
+                      <td><span class="badge bg-warning text-dark rounded-pill">Menunggu Konfirmasi</span></td>
+                    </tr>
+                  </tbody>
+                </table>
               </div>
             </div>
-
           </div>
         </div>
 
@@ -229,6 +234,7 @@
   </div>
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="dashboardscript.js"></script>
 </body>
 
 </html>
