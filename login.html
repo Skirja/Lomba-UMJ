@@ -62,13 +62,19 @@
                     Swal.fire({
                         icon: 'error',
                         title: 'Oops...',
-                        text: 'Harap isi email dan password!'
+                        text: 'Harap isi email dan password!',
+                        customClass: {
+                            confirmButton: 'swal2-confirm-button-custom'
+                        },
                     });
                 } else {
                     Swal.fire({
                         icon: 'success',
                         title: 'Berhasil!',
-                        text: 'Anda berhasil login.'
+                        text: 'Anda berhasil login.',
+                        customClass: {
+                            confirmButton: 'swal2-confirm-button-custom'
+                        },
                     }).then(() => {
                         window.location.href = 'dashboard.html';
                     });
