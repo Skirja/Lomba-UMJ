@@ -112,7 +112,7 @@ form.addEventListener('submit', (event) => {
     },
   }).then((result) => {
     if (result.isConfirmed) {
-      window.location.href = 'login.html';
+      window.location.href = './page/login.html';
     }
   });
 });
