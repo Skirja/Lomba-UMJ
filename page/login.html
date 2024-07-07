@@ -73,7 +73,12 @@
                             confirmButton: 'swal2-confirm-button-custom'
                         },
                     }).then(() => {
-                        window.location.href = '../page/dashboard.html';
+                        // Cek apakah email adalah admin@admin.com
+                        if (email === 'admin@admin.com') {
+                            window.location.href = '../page/adminDashboard.html';
+                        } else {
+                            window.location.href = '../page/dashboard.html';
+                        }
                     });
                 }
             });
