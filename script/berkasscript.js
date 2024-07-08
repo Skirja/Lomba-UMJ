@@ -53,7 +53,11 @@ document.addEventListener('DOMContentLoaded', function() {
     function addMessage(sender, message) {
       const messageElement = document.createElement('div');
       messageElement.classList.add('message', sender);
-      messageElement.textContent = message;
+      
+      const textElement = document.createElement('p');
+      textElement.textContent = message;
+      
+      messageElement.appendChild(textElement);
       chatbotMessages.appendChild(messageElement);
       chatbotMessages.scrollTop = chatbotMessages.scrollHeight;
     }
