@@ -25,7 +25,6 @@ function filterTable() {
 
 document.getElementById("searchInput").addEventListener("keyup", filterTable);
 
-// Menambahkan event listener untuk tombol detail
 var detailButtons = document.querySelectorAll('[data-bs-toggle="collapse"]');
 detailButtons.forEach(function(button) {
     button.addEventListener('click', function(event) {

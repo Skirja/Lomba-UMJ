@@ -144,7 +144,6 @@ $(document).ready(function () {
   const floatingButton = $('.floating-button');
   const homeSection = $('#home');
 
-  // Smooth scrolling for navigation links
   $('a[href^="#"]').on('click', function (event) {
     var target = $(this.getAttribute('href'));
     if (target.length) {
@@ -155,7 +154,6 @@ $(document).ready(function () {
     }
   });
 
-  // Floating button visibility based on scroll position
   $(window).on('scroll', function () {
     if ($(window).scrollTop() + $(window).height() > homeSection.offset().top &&
       $(window).scrollTop() < homeSection.offset().top + homeSection.outerHeight()) {
